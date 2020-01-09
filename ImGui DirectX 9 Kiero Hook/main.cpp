@@ -56,6 +56,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 			kiero::bind(42, (void**)& oEndScene, hkEndScene);
 			window = FindWindow(NULL, WINDOW_NAME);
 			oWndProc = (WNDPROC)SetWindowLongPtr(window, GWL_WNDPROC, (LONG_PTR)WndProc);
+			attached = true;
 		}
 	} while (!attached);
 	return TRUE;
